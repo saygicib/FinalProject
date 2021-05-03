@@ -16,9 +16,9 @@ namespace Core.DataAccess.EntityFramework
         {
             using (TContext context = new TContext())
             {
-                var addedEntity = context.Entry(entity);//Eklenecek nesnenin referansını almak için yazıldı.
-                addedEntity.State = EntityState.Added;//Eklenecek bir nesne.
-                context.SaveChanges();//Ekle.
+                var addedEntity = context.Entry(entity);
+                addedEntity.State = EntityState.Added;
+                context.SaveChanges();
             }
         }
 
@@ -26,9 +26,9 @@ namespace Core.DataAccess.EntityFramework
         {
             using (TContext context = new TContext())
             {
-                var deletedEntity = context.Entry(entity);//Silinecek nesnenin referansını almak için yazıldı.
-                deletedEntity.State = EntityState.Deleted;//Silinecek bir nesne.
-                context.SaveChanges();//Sil.
+                var deletedEntity = context.Entry(entity);
+                deletedEntity.State = EntityState.Deleted;
+                context.SaveChanges();
             }
         }
 
