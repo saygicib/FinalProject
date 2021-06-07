@@ -32,6 +32,7 @@ namespace Business.Concrete
 
         [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
         {
             IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName),
@@ -78,7 +79,8 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails());
         }
-
+        [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Update(Product product)
         {
             throw new NotImplementedException();
@@ -110,6 +112,11 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.CategoryLimitExceded);
             }
             return new SuccessResult();
+        }
+
+        public IResult AddTransactionalTest(Product product)
+        {
+            throw new NotImplementedException();
         }
     }
 }
