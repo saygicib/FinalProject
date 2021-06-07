@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Core.Utilities.Security.Encryption
 {
-    //Anahtarı ve şifreleme algoritmalarını veriyoruz.
+    //Web.Api'ye Anahtarı ve şifreleme algoritmalarını veriyoruz.
     //Credentials = kullanıcı bilgileri.
     public class SigningCredentialsHelper
     {

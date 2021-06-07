@@ -8,7 +8,7 @@ namespace Core.Utilities.Security.Hashing
     public class HashingHelper
     {
         //Encoding.UTF8.GetBytes(password) = string'in byte karşılığını vermek için yapılıyor.
-        //Verdiğimiz bir password değerine göre bir salt ve hash değeri oluşturmaya yarıyor.
+        //Verdiğimiz bir password'un değerine göre bir hash değeri ve salt oluşturmaya yarıyor.
         public static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
